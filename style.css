@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background:
+        radial-gradient(circle at 20% 30%, #ffdede, transparent 60%),
+        radial-gradient(circle at 80% 70%, #ffeaea, transparent 60%),
+        linear-gradient(135deg, #ffffff, #fff5f5, #ffe6e6);
+}
+
+/* canvas fond */
+#bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+}
+
+/* contenu */
+.wrapper {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 720px;
+    padding: 40px;
+}
+
+/* typo premium */
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem;
+    margin-bottom: 10px;
+    color: #5a0000;
+}
+
+.lana {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.6rem;
+    background:
+        linear-gradient(45deg, #8b0000, #ff4d6d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    margin-bottom: 35px;
+}
+
+/* message */
+.message {
+    font-size: 1.35rem;
+    line-height: 1.9;
+    min-height: 120px;
+    color: #4a0000;
+}
+
+/* bouton */
+.btn {
+    margin-top: 35px;
+    padding: 12px 28px;
+    border-radius: 25px;
+    border: 1px solid #b30000;
+    background: white;
+    color: #b30000;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #b30000;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* =================
+OVERLAY LETTER 
+================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* PRIORITÉ MAX */
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.letter-box {
+    max-width: 500px;
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .15);
+    transform: scale(.9);
+    transition: .5s;
+}
+
+.overlay.show .letter-box {
+    transform: scale(1);
+}
+
+.letter-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #5a0000;
+}
+
+.letter-box p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.letter-box button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #b30000;
+    color: white;
+    cursor: pointer;
+}
